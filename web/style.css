@@ -6653,3 +6653,11 @@ body {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+#nighthawks-bg {
+    background-image: url('img/uploads/nighthawks.jpg');
+
+    @supports (background-image: url('img/uploads/nighthawks.webp')) {
+        background-image: url('img/uploads/nighthawks.webp');
+    }
+}
