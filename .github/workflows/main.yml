@@ -79,7 +79,7 @@ jobs:
 
     - name: Configure AWS credentials
       if: steps.filter.outputs.web == 'true'
-      uses: aws-actions/configure-aws-credentials@v1
+      uses: aws-actions/configure-aws-credentials@v2
       with:
         role-to-assume: arn:aws:iam::646082475080:role/website-antoine-delia-github-role
         aws-region: eu-west-1
