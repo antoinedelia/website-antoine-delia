@@ -100,6 +100,10 @@
 
     <!-- Google reCAPTCHA -->
     <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="custom.css">
 </head>
 
 <body class="home header-has-img loading">
@@ -194,11 +198,11 @@
                                                 <span class="cont"><a
                                                        href="mailto:antoine.delia@gmail.com">antoine.delia@gmail.com</a></span>
                                             </li>
-                                            <!-- <li class="clearfix">
-                                                <strong class="title">Mobile</strong>
-                                                <span class="cont"><a href="tel:+33624748001">+33 6 24 74 80
-                                                        01</a></span>
-                                            </li> -->
+                                            <li class="clearfix">
+                                                <strong class="title">Expérience</strong>
+                                                <span id="workTimeProfile"
+                                                      class="cont"></span>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -230,25 +234,32 @@
                                 </a>
                             </p>
 
-                            <p>Bonjour ! Je m'appelle Antoine Delia et je suis actuellement Connectivity Automation
-                                Technology Specialist chez Airbus depuis janvier 2023.
+                            <p class="justify">Bonjour ! Je m'appelle <b>Antoine Delia</b> et je suis actuellement
+                                <b>Connectivity
+                                    Automation Technology Specialist chez Airbus</b> depuis janvier 2023.
                             </p>
-                            <p>Mon rôle est de concevoir, conseiller, et mettre en oeuvre les meilleures solutions liées
-                                au domaine de l'automatisation, en fonction des besoins et des contraintes rencontrés.
+                            <p class="justify">Mon rôle est de <b>concevoir,
+                                    conseiller, et mettre en oeuvre les meilleures solutions liées
+                                    au domaine de l'automatisation</b>, en fonction des besoins et des contraintes
+                                rencontrés.
                                 Je suis déjà intervenu sur différents projets d'automatisation pour le compte de
                                 nombreux clients,
                                 ce qui me permet de rapidement identifier les solutions les plus adaptées à chacun.
+                                <br>
                                 En tant que Technology Specialist, je me tiens au courant des nouvelles
                                 avancées en matière de technologies et d'automatisation. Pour autant, mes connaissances
-                                principales se retrouvent chez AWS (3 certifications), Python, les outils
-                                d'Infrastructure as Code (Terraform, Serverless Framework, CloudFormation), de
-                                conteneurisation (Docker) et de CI/CD (Github Actions).
+                                principales se retrouvent chez <b>AWS</b> (3 certifications), <b>Python</b>, les outils
+                                d'Infrastructure as Code (<b>Terraform</b>, Serverless Framework,
+                                CloudFormation), de
+                                conteneurisation (<b>Docker</b>) et de CI/CD (<b>Jenkins</b>, <b>Github Actions</b>).
                             </p>
-                            <p>J'ai obtenu mon diplôme d'ingénieur en informatique au Cesi Exia de
-                                Toulouse en 2018. J'ai réalisé plusieurs stages, dont un en Irlande qui m'a
+                            <p class="justify">J'ai obtenu mon <b>diplôme d'ingénieur en informatique</b> au Cesi Exia
+                                de
+                                Toulouse en <b>2018</b>. J'ai réalisé plusieurs stages, dont un en Irlande qui m'a
                                 permis de consolider mon anglais et obtenir un résultat de 965 au TOEIC en 2017.
                             </p>
-                            <p>De nature curieuse, je prends plaisir à découvrir de nouvelles technologies par le biais
+                            <p class="justify">De nature curieuse, je prends plaisir à découvrir de nouvelles
+                                technologies par le biais
                                 de projets personnels. J'ai ainsi conçu différents sites webs (Angular, React.JS,
                                 hugo) et automatisé leur déploiement dans AWS.
                                 En 2022, j'ai participé à l'<a
@@ -259,7 +270,7 @@
                                    href="https://gist.github.com/antoinedelia/0d271370a73c24de4d01b682da86a650"
                                    target="_blank"
                                    rel="noopener noreferrer">apprendre
-                                    plus</a> sur Python et les algorithmes en général.
+                                    plus sur Python et les algorithmes</a> en général.
                                 Je possède également un NAS sur lequel j'ai pu configurer la suite <a
                                    href="https://wiki.servarr.com/"
                                    target="_blank"
@@ -270,11 +281,12 @@
                                    target="_blank"
                                    rel="noopener noreferrer">Navidrome</a>...
                             </p>
-                            <p>
-                                Sur un plan plus personnel, mon temps libre se divise entre la pratique de l'escalade en
-                                salle et la découverte de nouveaux films pour alimenter ma culture cinématographique.
+                            <p class="justify">
+                                Sur un plan plus personnel, mon temps libre se divise entre le running et la découverte
+                                de nouveaux films pour alimenter ma culture cinématographique.
                             </p>
-                            <p id="workTime"></p>
+                            <p class="justify"
+                               id="workTime"></p>
                         </div>
                     </div>
                 </section>
@@ -556,8 +568,8 @@
                         <h2 class="section-title">Loisirs</h2>
 
                         <div class="section-box">
-                            <p>Je suis passionné par le cinéma, la musique électronique et les échecs.
-                                <br />J'ai pratiqué le théâtre pendant 7 ans et la course à pied pendant 5 ans.
+                            <p>Je suis passionné par le cinéma, la musique et le running.
+                                <br />J'ai également pratiqué le théâtre pendant 7 ans.
                                 <br />J'ai activement tenu à jour un <a href="https://blog.antoinedelia.fr"
                                    target="_blank">blog</a> mélangeant histoires personnelles, découvertes culturelles
                                 et récits.
@@ -569,8 +581,8 @@
                                     <span>Cinéma</span>
                                 </li>
                                 <li>
-                                    <i class="material-icons">grid_4x4</i>
-                                    <span>Échecs</span>
+                                    <i class="material-icons">directions_run</i>
+                                    <span>Running</span>
                                 </li>
                                 <li>
                                     <i class="material-icons">audiotrack</i>
@@ -681,27 +693,8 @@
             src="js/options.js"></script>
     <script type="text/javascript"
             src="js/site.min.js"></script>
-    <script type="text/javascript">
-        document.getElementById("age").innerHTML = _calculateAge(new Date("1996-12-09"));
-
-        function monthDiff(d1, d2) {
-            var months;
-            months = (d2.getFullYear() - d1.getFullYear()) * 12;
-            months -= d1.getMonth();
-            months += d2.getMonth();
-            return months <= 0 ? 0 : months;
-        }
-        startedWorkingDate = new Date("2018-09-01")
-        currentDate = new Date()
-        monthsWorking = monthDiff(startedWorkingDate, currentDate)
-        year = Math.floor(monthsWorking / 12)
-        yearString = year + " an" + (year > 1 ? "s" : "")
-        months = monthsWorking % 12
-        monthsString = months + " mois"
-        message = "Au total, je dispose de " + yearString + (months > 0 ? " et " + monthsString : "") + " d'expérience."
-        document.getElementById("workTime").innerHTML = message;
-
-    </script>
+    <script type="text/javascript"
+            src="custom.js"></script>
 </body>
 
 </html>
