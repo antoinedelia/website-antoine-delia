@@ -1,9 +1,11 @@
 variable "bucket_name" {
-  type = string
+  type    = string
+  default = "antoinedelia.fr"
 }
 
 variable "domain_name" {
-  type = string
+  type    = string
+  default = "antoinedelia.fr"
 }
 
 variable "region" {

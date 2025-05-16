@@ -1,6 +1,6 @@
 resource "aws_cloudfront_distribution" "dist" {
   origin {
-    domain_name = aws_s3_bucket.site.website_endpoint
+    domain_name = aws_s3_bucket_website_configuration.site.website_endpoint
     origin_id   = aws_s3_bucket.site.id
     custom_origin_config {
       http_port              = "80"
@@ -9,8 +9,7 @@ resource "aws_cloudfront_distribution" "dist" {
       origin_ssl_protocols   = ["TLSv1", "TLSv1.1", "TLSv1.2"]
     }
   }
-  enabled             = true
-  default_root_object = "index.html"
+  enabled = true
 
   restrictions {
     geo_restriction {
@@ -40,12 +39,5 @@ resource "aws_cloudfront_distribution" "dist" {
   viewer_certificate {
     acm_certificate_arn = aws_acm_certificate_validation.cert.certificate_arn
     ssl_support_method  = "sni-only"
-  }
-
-  custom_error_response {
-    error_code            = "404"
-    error_caching_min_ttl = 0
-    response_code         = "200"
-    response_page_path    = "/index.html"
   }
 }
