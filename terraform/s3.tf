@@ -10,7 +10,14 @@ resource "aws_s3_bucket_website_configuration" "site" {
   }
 }
 
-resource "aws_s3_bucket_public_access_block" "site_public_access_block" {
+resource "aws_s3_bucket_ownership_controls" "site" {
+  bucket = aws_s3_bucket.site.id
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
+}
+
+resource "aws_s3_bucket_public_access_block" "site" {
   bucket = aws_s3_bucket.site.id
 
   block_public_acls       = false
@@ -22,7 +29,10 @@ resource "aws_s3_bucket_public_access_block" "site_public_access_block" {
 resource "aws_s3_bucket_acl" "site" {
   bucket = aws_s3_bucket.site.id
 
-  depends_on = [aws_s3_bucket_public_access_block.site_public_access_block]
+  depends_on = [
+    aws_s3_bucket_ownership_controls.site,
+    aws_s3_bucket_public_access_block.site
+  ]
 
   acl = "public-read"
 }
@@ -30,7 +40,7 @@ resource "aws_s3_bucket_acl" "site" {
 resource "aws_s3_bucket_policy" "site" {
   bucket = aws_s3_bucket.site.id
 
-  depends_on = [aws_s3_bucket_public_access_block.site_public_access_block]
+  depends_on = [aws_s3_bucket_public_access_block.site]
 
   policy = jsonencode({
     Version = "2012-10-17"
