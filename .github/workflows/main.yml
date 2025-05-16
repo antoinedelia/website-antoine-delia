@@ -19,7 +19,6 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: web
 
     steps:
     - uses: actions/checkout@v3
@@ -27,8 +26,6 @@ jobs:
       id: filter
       with:
         filters: |
-          web:
-            - 'web/**'
           terraform:
             - 'terraform/**'
 
@@ -67,27 +64,3 @@ jobs:
       if: steps.filter.outputs.terraform == 'true' && github.ref == 'refs/heads/master' && github.event_name == 'push'
       working-directory: ./terraform
       run: terraform apply -auto-approve
-
-    - name: Deploy to AWS
-      if: steps.filter.outputs.web == 'true'
-      uses: jakejarvis/s3-sync-action@master
-      with:
-        args: --acl public-read --follow-symlinks --delete
-      env:
-        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        AWS_REGION: 'eu-west-1'
-        SOURCE_DIR: 'web/'
-
-    - name: Configure AWS credentials
-      if: steps.filter.outputs.web == 'true'
-      uses: aws-actions/configure-aws-credentials@v2
-      with:
-        role-to-assume: arn:aws:iam::646082475080:role/website-antoine-delia-github-role
-        aws-region: eu-west-1
-
-    - name: Invalidate cache for Cloudfront distribution
-      if: steps.filter.outputs.web == 'true'
-      run: |
-        for id in $(aws cloudfront list-distributions --query "DistributionList.Items[*].{id:Id,origin:Origins.Items[0].Id}[?origin=='${{ secrets.AWS_S3_BUCKET }}'].id" --output text);do aws cloudfront create-invalidation --distribution-id $id --paths "/*";done;
