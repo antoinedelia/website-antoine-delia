@@ -5,8 +5,8 @@ resource "aws_s3_bucket" "site" {
 
 resource "aws_s3_bucket_website_configuration" "site" {
   bucket = aws_s3_bucket.site.id
-  redirect_all_requests_to {
-    host_name = "linktr.ee/antoinedelia"
+  index_document {
+    suffix = "index.html"
   }
 }
 
