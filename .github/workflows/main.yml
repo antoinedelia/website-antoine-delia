@@ -16,6 +16,11 @@ jobs:
       id-token: write
       contents: read
 
+    outputs:
+      s3_bucket_name: ${{ steps.terraform_outputs.outputs.s3_bucket_name }}
+      cloudfront_distribution_id: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_id }}
+
+
     defaults:
       run:
         shell: bash
