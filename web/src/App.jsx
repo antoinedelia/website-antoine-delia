@@ -311,7 +311,7 @@ export default function App() {
 
   return (
     <div className="bg-gray-900 text-gray-200 font-sans leading-relaxed">
-      <header className="container mx-auto px-6 py-8 flex justify-between items-center">
+      <header className="container mx-auto px-6 py-8 flex justify-between items-center sticky top-0 bg-gray-900 z-50 shadow-lg shadow-gray-900/50">
         <div>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white">{t.name}</h1>
           <p className="text-blue-400 text-lg md:text-xl">{t.tagline}</p>
