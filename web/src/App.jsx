@@ -25,9 +25,7 @@ const content = {
     ],
     testimonialsTitle: "Ce qu'ils disent de moi",
     testimonials: [
-      { name: "Julien B., CEO de TechNova", quote: "Antoine a complètement transformé notre approche du déploiement. Sa vision stratégique et son expertise sur AWS nous ont fait gagner un temps précieux. Un vrai partenaire de confiance." },
-      { name: "Claire M., Lead Developer chez Innovatech", quote: "L'expertise d'Antoine en Infrastructure as Code a apporté une stabilité et une prévisibilité incroyables à notre plateforme. Son approche pédagogique a été un vrai plus pour l'équipe." },
-      { name: "Thomas L., CTO de StartupBoost", quote: "Au-delà de ses compétences techniques impeccables, c'est la capacité d'Antoine à comprendre nos enjeux business qui a fait la différence. Il ne propose pas juste des solutions, il résout des problèmes." }
+      { name: "Client Satisfait", quote: "Un témoignage d'un client satisfait apparaîtra bientôt ici. Votre projet pourrait être le prochain !." },
     ],
     aboutTitle: "À Propos de Moi",
     aboutText: [
@@ -76,9 +74,7 @@ const content = {
     ],
     testimonialsTitle: "What They Say About Me",
     testimonials: [
-      { name: "Julien B., CEO of TechNova", quote: "Antoine completely transformed our deployment approach. His strategic vision and expertise in AWS saved us valuable time. A true trusted partner." },
-      { name: "Claire M., Lead Developer at Innovatech", quote: "Antoine's expertise in Infrastructure as Code brought incredible stability and predictability to our platform. His teaching approach was a real asset for the team." },
-      { name: "Thomas L., CTO of StartupBoost", quote: "Beyond his impeccable technical skills, it was Antoine's ability to understand our business challenges that made all the difference. He doesn't just offer solutions; he solves problems." }
+      { name: "Happy Client", quote: "A testimonial from a happy client will appear here soon. Your project could be next!" },
     ],
     aboutTitle: "About Me",
     aboutText: [
