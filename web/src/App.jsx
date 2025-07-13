@@ -45,6 +45,8 @@ const content = {
     formMessage: "Votre message",
     formSubmit: "Envoyer le Message",
     formSuccess: "Merci ! Votre message a bien été envoyé. Je reviens vers vous rapidement.",
+    formCaptcha: "Combien font",
+    formCaptchaError: "Réponse incorrecte. Veuillez réessayer.",
     languageToggle: "Switch to English",
     socials: {
       github: "https://github.com/antoinedelia",
@@ -94,6 +96,8 @@ const content = {
     formMessage: "Your Message",
     formSubmit: "Send Message",
     formSuccess: "Thank you! Your message has been sent. I'll be in touch shortly.",
+    formCaptcha: "What is",
+    formCaptchaError: "Incorrect answer. Please try again.",
     languageToggle: "Passer en Français",
     socials: {
       github: "https://github.com/antoinedelia",
@@ -186,10 +190,33 @@ const TestimonialCard = ({ name, quote }) => (
 
 const ContactForm = ({ t }) => {
   const formRef = useRef(null);
-  const [status, setStatus] = useState('idle'); // 'idle', 'sending', 'success', 'error'
+  const [status, setStatus] = useState('idle'); // 'idle', 'sending', 'success', 'error', 'captchaError'
+  const [captcha, setCaptcha] = useState({ num1: 0, num2: 0, answer: '' });
+
+  useEffect(() => {
+    generateCaptcha();
+  }, []);
+
+  const generateCaptcha = () => {
+    setCaptcha({
+      num1: Math.floor(Math.random() * 10),
+      num2: Math.floor(Math.random() * 10),
+      answer: ''
+    });
+  };
+
+  const handleCaptchaChange = (e) => {
+    setCaptcha({ ...captcha, answer: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (parseInt(captcha.answer, 10) !== captcha.num1 + captcha.num2) {
+      setStatus('captchaError');
+      return;
+    }
+
     setStatus('sending');
     const form = formRef.current;
     const formData = new FormData(form);
@@ -201,6 +228,7 @@ const ContactForm = ({ t }) => {
         console.log('Success!', response);
         setStatus('success');
         form.reset();
+        generateCaptcha();
       })
       .catch(error => {
         console.error('Error!', error.message);
@@ -216,11 +244,11 @@ const ContactForm = ({ t }) => {
     );
   }
 
-  if (status === 'error') {
+  if (status === 'error' || status === 'captchaError') {
     return (
       <div className="text-center p-8 bg-red-900/50 border border-red-700 rounded-lg">
-        <h3 className="text-2xl font-bold text-white mb-2">{t.formError}</h3>
-        <button onClick={() => setStatus('idle')} className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg">
+        <h3 className="text-2xl font-bold text-white mb-2">{status === 'captchaError' ? t.formCaptchaError : t.formError}</h3>
+        <button onClick={() => { setStatus('idle'); generateCaptcha(); }} className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg">
           Try Again
         </button>
       </div>
@@ -241,13 +269,16 @@ const ContactForm = ({ t }) => {
         <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">{t.formMessage}</label>
         <textarea name="message" id="message" rows="4" required className="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500 focus:outline-none" disabled={status === 'sending'}></textarea>
       </div>
+      <div>
+        <label htmlFor="captcha" className="block text-sm font-medium text-gray-300 mb-2">{t.formCaptcha} {captcha.num1} + {captcha.num2}?</label>
+        <input type="number" name="captcha" id="captcha" value={captcha.answer} onChange={handleCaptchaChange} required className="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-blue-500 focus:outline-none" disabled={status === 'sending'} />
+      </div>
       <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-bold py-3 px-6 rounded-lg text-lg transition-all transform hover:scale-105 duration-300" disabled={status === 'sending'}>
         {status === 'sending' ? t.formSending : t.formSubmit}
       </button>
     </form>
   );
 };
-
 
 export default function App() {
   const [language, setLanguage] = useState('fr');
