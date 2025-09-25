@@ -8,7 +8,7 @@ const content = {
     tagline: "Expert AWS & DevOps Freelance",
     heroTitle: "Bonjour, je suis Antoine, votre architecte Cloud & DevOps.",
     heroDescription: "Je transforme des infrastructures complexes en systèmes robustes, évolutifs et automatisés. Mon objectif : vous aider à livrer de la valeur plus rapidement et avec plus de sérénité.",
-    heroImageUrl: "https://placehold.co/400x400/1a202c/9f7aea?text=Antoine+D.",
+    heroImageUrl: "https://avatars.githubusercontent.com/u/7138350?v=4",
     servicesTitle: "Mes Services",
     services: [
       { title: "Migration vers AWS", description: "Vous vous demandez comment aborder votre migration vers AWS ? Je vous guide à chaque étape." },
@@ -59,7 +59,7 @@ const content = {
     tagline: "Freelance AWS & DevOps Expert",
     heroTitle: "Hi, I'm Antoine, your Cloud & DevOps Architect.",
     heroDescription: "I transform complex infrastructures into robust, scalable, and automated systems. My goal: to help you deliver value faster and with greater peace of mind.",
-    heroImageUrl: "https://placehold.co/400x400/1a202c/9f7aea?text=Antoine+D.",
+    heroImageUrl: "https://avatars.githubusercontent.com/u/7138350?v=4",
     servicesTitle: "My Services",
     services: [
       { title: "AWS Migration", description: "Wondering how to approach your migration to AWS? I'll guide you every step of the way." },
