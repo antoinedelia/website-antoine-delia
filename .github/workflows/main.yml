@@ -17,7 +17,6 @@ jobs:
       contents: read
 
     outputs:
-      s3_bucket_name: ${{ steps.terraform_outputs.outputs.s3_bucket_name }}
       cloudfront_distribution_id: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_id }}
 
 
@@ -106,7 +105,7 @@ jobs:
       - name: Deploy to S3
         working-directory: ./web
         run: |
-          aws s3 sync ./dist s3://${{ needs.deploy-infra.outputs.s3_bucket_name }} --delete
+          aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET }} --delete
 
       - name: Invalidate CloudFront Distribution
         run: |
