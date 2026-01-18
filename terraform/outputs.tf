@@ -1,6 +1,6 @@
 output "s3_bucket_name" {
   description = "Name (id) of the bucket"
-  value       = aws_s3_bucket.site.id
+  value       = var.bucket_name
 }
 
 output "bucket_endpoint" {

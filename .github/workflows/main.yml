@@ -17,7 +17,6 @@ jobs:
       contents: read
 
     outputs:
-      s3_bucket_name: ${{ steps.terraform_outputs.outputs.s3_bucket_name }}
       cloudfront_distribution_id: ${{ steps.terraform_outputs.outputs.cloudfront_distribution_id }}
 
 
@@ -25,18 +24,30 @@ jobs:
       run:
         shell: bash
 
+    env:
+      AWS_REGION: 'eu-west-1'
+      TF_VAR_domain_name: 'antoinedelia.fr'
+      TF_VAR_bucket_name: ${{ secrets.AWS_S3_BUCKET }}
+
     steps:
     - name: Checkout
       uses: actions/checkout@v4
 
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v5
+      with:
+        role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+        aws-region: ${{ env.AWS_REGION }}
+
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
-      with:
-        cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
     - name: Terraform Init
       working-directory: ./terraform
-      run: terraform init
+      run: |
+        terraform init \
+          -backend-config="bucket=${{ secrets.S3_TERRAFORM_BUCKET }}" \
+          -backend-config="key=${{ secrets.S3_TERRAFORM_STATE_KEY }}"
 
     - name: Terraform Format
       working-directory: ./terraform
@@ -65,6 +76,8 @@ jobs:
     permissions:
       id-token: write
       contents: read
+    env:
+      AWS_REGION: 'eu-west-1'
 
     steps:
       - name: Checkout repository
@@ -84,15 +97,15 @@ jobs:
         run: npm run build
 
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v5
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          aws-region: eu-west-1
+          aws-region: ${{ env.AWS_REGION }}
 
       - name: Deploy to S3
         working-directory: ./web
         run: |
-          aws s3 sync ./dist s3://${{ needs.deploy-infra.outputs.s3_bucket_name }} --delete
+          aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET }} --delete
 
       - name: Invalidate CloudFront Distribution
         run: |
