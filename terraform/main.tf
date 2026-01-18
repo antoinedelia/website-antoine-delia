@@ -1,9 +1,8 @@
 terraform {
-  backend "remote" {
-    organization = "antoinedelia"
-    workspaces {
-      name = "antoine-delia-website"
-    }
+  backend "s3" {
+    region       = "eu-west-1"
+    use_lockfile = true
+    encrypt      = true
   }
 }
 
