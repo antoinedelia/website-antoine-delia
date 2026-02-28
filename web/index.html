@@ -1,13 +1,665 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="fr"
+      class="theme-color-1a77d4 theme-skin-light">
+
+<head>
+    <script async
+            src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-5739262040046149",
+            enable_page_level_ads: true
+        });
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-CXNHMSVLMS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-CXNHMSVLMS');
+    </script>
+    <script>
+        function _calculateAge(birthday) { // birthday is a date
+            var ageDifMs = Date.now() - birthday.getTime();
+            var ageDate = new Date(ageDifMs); // miliseconds from epoch
+            return Math.abs(ageDate.getUTCFullYear() - 1970);
+        }
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
     <title>Antoine Delia</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon"
+          type="image/ico"
+          href="img/favicon.png" />
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet"
+          type="text/css"
+          href="https://fonts.googleapis.com/css?family=Fredoka+One">
+    <link rel="stylesheet"
+          type="text/css"
+          href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic">
+
+    <!-- Icon Fonts -->
+    <link rel="stylesheet"
+          type="text/css"
+          href="fonts/map-icons/css/map-icons.min.css">
+    <link rel="stylesheet"
+          type="text/css"
+          href="fonts/icomoon/style.css">
+    <link rel="stylesheet"
+          href="font-awesome/css/font-awesome.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet"
+          type="text/css"
+          href="js/plugins/jquery.bxslider/jquery.bxslider.css">
+    <link rel="stylesheet"
+          type="text/css"
+          href="js/plugins/jquery.customscroll/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet"
+          type="text/css"
+          href="js/plugins/jquery.mediaelement/mediaelementplayer.min.css">
+    <link rel="stylesheet"
+          type="text/css"
+          href="js/plugins/jquery.fancybox/jquery.fancybox.css">
+    <link rel="stylesheet"
+          type="text/css"
+          href="js/plugins/jquery.owlcarousel/owl.carousel.css">
+    <link rel="stylesheet"
+          type="text/css"
+          href="js/plugins/jquery.owlcarousel/owl.theme.css">
+    <link rel="stylesheet"
+          type="text/css"
+          href="style.css">
+    <link rel="stylesheet"
+          type="text/css"
+          href="colors/blue.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
+          rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Modernizer for detect what features the user’s browser has to offer -->
+    <script type="text/javascript"
+            src="js/libs/modernizr.js"></script>
+
+    <!-- Google reCAPTCHA -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="custom.css">
+</head>
+
+<body class="home header-has-img loading">
+
+    <div class="mobile-nav">
+        <button class="btn-mobile mobile-nav-close"><i class="rsicon rsicon-close"></i></button>
+
+        <div class="mobile-nav-inner">
+            <nav id="mobile-nav"
+                 class="nav">
+                <ul class="clearfix">
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#skills">Compétences</a></li>
+                    <li><a href="#experience">Expériences</a></li>
+                    <li><a href="https://blog.antoinedelia.fr">Blog</a></li>
+                    <li><a href="#contact">Contact<span></span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- .mobile-nav -->
+
+    <div class="wrapper">
+        <header class="header">
+            <div id="nighthawks-bg"
+                 class="head-bg"></div>
+
+            <div class="head-bar">
+                <div class="head-bar-inner">
+                    <div class="row">
+                        <div class="col-sm-3 col-xs-6">
+                            <a class="logo"
+                               href="index.html"><span>Antoine</span>DELIA</a>
+                            <!-- <a class="head-logo" href=""><img src="img/rs-logo.png" alt="RScard"/></a> -->
+                        </div>
+
+                        <div class="col-sm-9 col-xs-6">
+                            <div class="nav-wrap">
+                                <nav id="nav"
+                                     class="nav">
+                                    <ul class="clearfix">
+                                        <li><a href="#about">À propos</a></li>
+                                        <li><a href="#skills">Compétences</a></li>
+                                        <li><a href="#experience">Expériences</a></li>
+                                        <li><a href="https://blog.antoinedelia.fr">Blog</a></li>
+                                        <li><a href="#contact">Contact<span></span></a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- .nav-wrap -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- .header -->
+
+        <div class="content">
+            <div class="container">
+
+                <!-- START: PAGE CONTENT -->
+                <section id="about"
+                         class="section section-about">
+                    <div class="animate-up">
+                        <div class="section-box">
+                            <div class="profile">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="profile-photo"><img src="img/uploads/Antoine_Delia.jpg"
+                                                 alt="Antoine Delia" /></div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="profile-info">
+                                            <div class="profile-preword"><span>Bonjour</span></div>
+                                            <h1 class="profile-title"><span>Je suis</span> Antoine Delia</h1>
+
+                                            <h2 class="profile-position">Cloud Automation & DevOps Lead
+                                                @ Airbus</h2>
+                                        </div>
+                                        <ul class="profile-list">
+                                            <li class="clearfix">
+                                                <strong class="title">Age</strong>
+                                                <span id="age"
+                                                      class="cont"></span>
+                                            </li>
+                                            <li class="clearfix">
+                                                <strong class="title">Localisation</strong>
+                                                <span class="cont">Toulouse, FRANCE</span>
+                                            </li>
+                                            <li class="clearfix">
+                                                <strong class="title">Expérience</strong>
+                                                <span id="workTimeProfile"
+                                                      class="cont"></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="profile-social">
+                                <ul class="social">
+                                    <li><a class="ripple-centered"
+                                           href="https://github.com/antoinedelia"
+                                           target="_blank"><i class="rsicon fa fa-github"></i></a></li>
+                                    <li><a class="ripple-centered"
+                                           href="https://stackoverflow.com/users/4141606/antoine-delia?tab=profile"
+                                           target="_blank"><i class="rsicon fa fa-stack-overflow"></i></a></li>
+                                    <li><a class="ripple-centered"
+                                           href="https://fr.linkedin.com/in/antoinedelia"
+                                           target="_blank"><i class="rsicon rsicon-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="section-txt-btn">
+                            <p>
+                                <a class="btn btn-lg btn-border ripple"
+                                   target="_blank"
+                                   href="files/Antoine_Delia_Resume_FR.pdf">Télécharger CV
+                                </a>
+                            </p>
+
+                            <p class="justify">Bonjour ! Je m'appelle Antoine Delia et je suis actuellement
+                                Cloud Automation & DevOps Lead chez Airbus depuis janvier 2023.
+                            </p>
+                            <p class="justify">Mon rôle est de concevoir,
+                                conseiller, et mettre en oeuvre les meilleures solutions liées
+                                au domaine de l'automatisation, en fonction des besoins et des contraintes
+                                rencontrés.
+                                Je suis déjà intervenu sur différents projets d'automatisation pour le compte de
+                                nombreux clients,
+                                ce qui me permet de rapidement identifier les solutions les plus adaptées à chacun.
+                                <br>
+                                En tant que Lead DevOps, je me tiens au courant des nouvelles
+                                avancées en matière de technologies et d'automatisation.
+                            </p>
+                            <p class="justify">J'ai obtenu mon diplôme d'ingénieur en informatique au Cesi Exia
+                                de
+                                Toulouse en 2018.
+                            </p>
+                            <p class="justify">
+                                Sur un plan plus personnel, mon temps libre se divise entre le running, l'administration
+                                de mon HomeLab, la rédaction d'articles pour <a href="https://cloud.antoinedelia.fr/"
+                                   target="_blank">mon blog professionnel</a>, et la découverte
+                                de nouveaux films pour alimenter ma culture cinématographique.
+                            </p>
+                            <p class="justify"
+                               id="workTime"></p>
+                        </div>
+                    </div>
+                </section>
+                <!-- #about -->
+
+                <section id="skills"
+                         class="section section-skills">
+                    <div class="animate-up">
+                        <h2 class="section-title">Compétences</h2>
+
+                        <div class="section-box">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="progress-bar">
+                                        <div class="bar-data">
+                                            <span class="bar-title">AWS</span>
+                                            <span class="bar-value">90%</span>
+                                        </div>
+                                        <div class="bar-line">
+                                            <span class="bar-fill"
+                                                  data-width="90%"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="progress-bar">
+                                        <div class="bar-data">
+                                            <span class="bar-title">Python</span>
+                                            <span class="bar-value">85%</span>
+                                        </div>
+                                        <div class="bar-line">
+                                            <span class="bar-fill"
+                                                  data-width="85%"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="progress-bar">
+                                        <div class="bar-data">
+                                            <span class="bar-title">Infrastructure as Code</span>
+                                            <span class="bar-value">80%</span>
+                                        </div>
+                                        <div class="bar-line">
+                                            <span class="bar-fill"
+                                                  data-width="80%"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="progress-bar">
+                                        <div class="bar-data">
+                                            <span class="bar-title">CI/CD</span>
+                                            <span class="bar-value">75%</span>
+                                        </div>
+                                        <div class="bar-line">
+                                            <span class="bar-fill"
+                                                  data-width="75%"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="progress-bar">
+                                        <div class="bar-data">
+                                            <span class="bar-title">Docker</span>
+                                            <span class="bar-value">60%</span>
+                                        </div>
+                                        <div class="bar-line">
+                                            <span class="bar-fill"
+                                                  data-width="60%"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="progress-bar">
+                                        <div class="bar-data">
+                                            <span class="bar-title">Kubernetes</span>
+                                            <span class="bar-value">25%</span>
+                                        </div>
+                                        <div class="bar-line">
+                                            <span class="bar-fill"
+                                                  data-width="25%"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- #skills -->
+
+                <section id="experience"
+                         class="section section-experience">
+                    <div class="animate-up">
+                        <h2 class="section-title">Expériences</h2>
+
+                        <div class="timeline">
+                            <div class="timeline-bar"></div>
+                            <div class="timeline-inner clearfix">
+                                <div class="timeline-box timeline-box-left">
+                                    <span class="dot"></span>
+
+                                    <div class="timeline-box-inner animate-right">
+                                        <span class="arrow"></span>
+
+                                        <div class="date">01/2023 - Aujourd'hui</div>
+                                        <h3>Airbus</h3>
+                                        <h4>CONNECTIVITY AUTOMATION TECHNOLOGY SPECIALIST</h4>
+
+                                        <p>Conception, conseils, et mise en oeuvre des meilleures solutions liées
+                                            au domaine de l'automatisation, en fonction des besoins et des contraintes
+                                            rencontrés.
+                                            <br /><br />Réalisation de la roadmap automation interne concernant les
+                                            différents besoins métiers, et traduction en spécifications techniques.
+                                            <br /><br />Lead sur les technologies et best practices d'automation à
+                                            adopter, et mise en place de guidelines internes.
+                                            <br /><br />Création de pipelines CI/CD globales et réutilisables, adaptées
+                                            à
+                                            différents types de projets (Terraform, Python), afin de standardiser les
+                                            processus de déploiement et de réduire les efforts de configuration
+                                            répétitifs.
+                                            <br /><br />Responsable d'une équipe externe composée d'une dizaine de
+                                            développeurs. Suivi de la qualité et contrôle des livrables.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-box timeline-box-right">
+                                    <span class="dot"></span>
+
+                                    <div class="timeline-box-inner animate-left">
+                                        <span class="arrow"></span>
+
+                                        <div class="date">09/2019 - 01/2023</div>
+                                        <h3>Technofy</h3>
+                                        <h4>CLOUD ENGINEER</h4>
+
+                                        <p>Conception et développement d'un outil en ligne de commandes (Python 3)
+                                            permettant la gestion d'un Vault Hashicorp. Documentation technique et
+                                            utilisateur sur l'utilisation du projet. Packaging de l'outil en exécutable
+                                            Windows et Mac.
+                                            <br /><br />Réalisation de l'architecture sécurisée de l'accès à une API
+                                            Gateway en utilisant Cognito et les scopes OAuth2. Déploiement via
+                                            Serverless Framework.
+                                            <br /><br />Mise en place de tests unitaires sur différents projets Python.
+                                            <br /><br />Migration d'un projet Terraform v11 vers v12.
+                                            <br /><br />Préparation et animation d'un webinar sur le serverless
+                                            computing dans AWS (<a target="_blank"
+                                               rel="noopener noreferrer"
+                                               href="https://youtu.be/nCGTWbUsfN4">https://youtu.be/nCGTWbUsfN4</a>).
+                                            <br /><br />Obtention de 3 certifications AWS.
+                                            <br /><br />Diverses interventions sur des projets d'automation dans le
+                                            cloud AWS.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-box timeline-box-left">
+                                    <span class="dot"></span>
+
+                                    <div class="timeline-box-inner animate-right">
+                                        <span class="arrow"></span>
+
+                                        <div class="date">09/2018 - 08/2019</div>
+                                        <h3>Slow Sense</h3>
+                                        <h4>DÉVELOPPEUR JUNIOR</h4>
+
+                                        <p>Responsable de la refonte d'un site extranet ASP sous Angular 8 et ASP.NET
+                                            Web Api en utilisant Material Design.
+                                            <br /><br />Création d'un service d'authentification en ASP.NET Core se
+                                            basant sur le standard JWT.
+                                            <br /><br />Réalisation de documentations et formations pour accompagner les
+                                            utilisateurs.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- #experience -->
+
+                <section id="education"
+                         class="section section-education">
+                    <div class="animate-up">
+                        <h2 class="section-title">Formations & Réalisations</h2>
+
+                        <div class="timeline">
+                            <div class="timeline-bar"></div>
+                            <div class="timeline-inner clearfix">
+
+                                <div class="timeline-box timeline-box-compact timeline-box-left">
+                                    <span class="dot"></span>
+
+                                    <div class="timeline-box-inner animate-right">
+                                        <span class="arrow"></span>
+
+                                        <div class="date"><span>2021</span></div>
+                                        <h3>Animation d'un Immersion Days AWS</h3>
+                                        <p>Présentation d'un atelier Immersion Days sur les principes généraux d'AWS.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-box timeline-box-compact timeline-box-right">
+                                    <span class="dot"></span>
+
+                                    <div class="timeline-box-inner animate-left">
+                                        <span class="arrow"></span>
+
+                                        <div class="date"><span>2019 - 2020</span></div>
+                                        <h3>Certifications AWS</h3>
+                                        <p>Solutions Architect Associate</p>
+                                        <p>Developer Associate</p>
+                                        <p>Cloud Practitioner</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-box timeline-box-compact timeline-box-left">
+                                    <span class="dot"></span>
+
+                                    <div class="timeline-box-inner animate-right">
+                                        <span class="arrow"></span>
+
+                                        <div class="date"><span>2020</span></div>
+                                        <h3>Webinar</h3>
+                                        <p>Conception et présentation d'un webinar portant sur le serverless computing,
+                                            disponible ici : <a target="_blank"
+                                               rel="noopener noreferrer"
+                                               href="https://youtu.be/nCGTWbUsfN4">https://youtu.be/nCGTWbUsfN4</a></p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-box timeline-box-compact timeline-box-right">
+                                    <span class="dot"></span>
+
+                                    <div class="timeline-box-inner animate-left">
+                                        <span class="arrow"></span>
+
+                                        <div class="date"><span>2015 - 2018</span></div>
+                                        <h3>Diplôme d'ingénieur</h3>
+                                        <h4>EXIA.CESI</h4>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-box timeline-box-compact timeline-box-left">
+                                    <span class="dot"></span>
+
+                                    <div class="timeline-box-inner animate-right">
+                                        <span class="arrow"></span>
+
+                                        <div class="date"><span>2017</span></div>
+                                        <h3>TOEIC</h3>
+                                        <p>Certificat Or avec un score de 965/990</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-box timeline-box-compact timeline-box-right">
+                                    <span class="dot"></span>
+
+                                    <div class="timeline-box-inner animate-left">
+                                        <span class="arrow"></span>
+
+                                        <div class="date"><span>2016 - 2017</span></div>
+                                        <h3>Drinking Games</h3>
+                                        <p>Création d'une application Android native et publication sur le Play Store
+                                            comptant plus de 20,000 téléchargements. Disponible ici : <a target="_blank"
+                                               rel="noopener noreferrer"
+                                               href="https://play.google.com/store/apps/details?id=com.antoinedelia.lebarbu_versionalcool">Drinking
+                                                Games</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- #education -->
+
+                <section id="interests"
+                         class="section section-interests">
+                    <div class="animate-up">
+                        <h2 class="section-title">Loisirs</h2>
+
+                        <div class="section-box">
+                            <p>Je suis passionné par le cinéma, la musique et le running.
+                                <br />J'ai également pratiqué le théâtre pendant 7 ans.
+                                <br />J'ai activement tenu à jour un <a href="https://blog.antoinedelia.fr"
+                                   target="_blank">blog</a> mélangeant histoires personnelles, découvertes culturelles
+                                et récits.
+                            </p>
+
+                            <ul class="interests-list">
+                                <li>
+                                    <i class="material-icons">movie</i>
+                                    <span>Cinéma</span>
+                                </li>
+                                <li>
+                                    <i class="material-icons">directions_run</i>
+                                    <span>Running</span>
+                                </li>
+                                <li>
+                                    <i class="material-icons">audiotrack</i>
+                                    <span>Musique</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <!-- #interests -->
+
+                <section id="contact"
+                         class="section section-contact">
+                    <div class="animate-up">
+                        <h2 class="section-title">Contact</h2>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="section-box contact-info has-map"
+                                     style="min-height: 0px; padding-bottom: 0px;">
+                                    <ul class="contact-list">
+                                        <li class="clearfix">
+                                            <strong>Localisation</strong>
+                                            <span style="float: right;">Toulouse, FRANCE</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- #contact -->
+                <!-- END: PAGE CONTENT -->
+
+            </div>
+            <!-- .container -->
+        </div>
+        <!-- .content -->
+
+        <footer class="footer">
+            <div class="footer-social">
+                <ul class="social">
+                    <li><a class="ripple-centered"
+                           href="https://github.com/antoinedelia"
+                           target="_blank"><i class="rsicon fa fa-github"></i></a></li>
+                    <li><a class="ripple-centered"
+                           href="https://stackoverflow.com/users/4141606/antoine-delia?tab=profile"
+                           target="_blank"><i class="rsicon fa fa-stack-overflow"></i></a></li>
+                    <li><a class="ripple-centered"
+                           href="https://fr.linkedin.com/in/antoinedelia"
+                           target="_blank"><i class="rsicon rsicon-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </footer>
+        <!-- .footer -->
+    </div>
+    <!-- .wrapper -->
+
+    <a class="btn-scroll-top"
+       href="#"><i class="rsicon rsicon-arrow-up"></i></a>
+
+    <div id="overlay"></div>
+    <div id="preloader">
+        <div class="preload-icon"><span></span><span></span></div>
+        <div class="preload-text">Loading ...</div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="text/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxXpUoBYRWI1RYqCpFTA85ONt8kGdj9Qw"></script>
+    <script type="text/javascript"
+            src="fonts/map-icons/js/map-icons.min.js"></script>
+    <script type="text/javascript"
+            src="js/plugins/jquery.mousewheel-3.0.6.pack.js"></script>
+    <script type="text/javascript"
+            src="js/plugins/imagesloaded.pkgd.min.js"></script>
+    <script type="text/javascript"
+            src="js/plugins/isotope.pkgd.min.js"></script>
+    <script type="text/javascript"
+            src="js/plugins/jquery.appear.min.js"></script>
+    <script type="text/javascript"
+            src="js/plugins/jquery.onepagenav.min.js"></script>
+    <script type="text/javascript"
+            src="js/plugins/jquery.bxslider/jquery.bxslider.min.js"></script>
+    <script type="text/javascript"
+            src="js/plugins/jquery.customscroll/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript"
+            src="js/plugins/jquery.mediaelement/mediaelement-and-player.min.js"></script>
+    <script type="text/javascript"
+            src="js/plugins/jquery.fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript"
+            src="js/plugins/jquery.fancybox/helpers/jquery.fancybox-media.js"></script>
+    <script type="text/javascript"
+            src="js/plugins/jquery.owlcarousel/owl.carousel.min.js"></script>
+    <script type="text/javascript"
+            src="js/options.js"></script>
+    <script type="text/javascript"
+            src="js/site.min.js"></script>
+    <script type="text/javascript"
+            src="custom.js"></script>
+</body>
+
 </html>
